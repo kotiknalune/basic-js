@@ -11,12 +11,12 @@ const chainMaker = {
 
     removeLink(position) {
         if (typeof(position) !== 'number' ||
-            parseInt(position) !== position ||
+            parseFloat(position) !== position ||
             position <= 0 ||
             position > this.array.length) {
             
             this.array = [];
-            throw Error();
+            throw new Error('Removing link position is out of range');
         }
         this.array.splice(position - 1, 1);
         return this;

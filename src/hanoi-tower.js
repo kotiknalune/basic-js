@@ -1,12 +1,11 @@
 module.exports = function calculateHanoi(disksNumber, turnsSpeed) {
 
-let turnCount = Math.pow(2,disksNumber) - 1,
-	 minSeconds = turnCount/(turnsSpeed/3600);
+	const turnsPerSecond = turnsSpeed/3600;
+	const turns = Math.pow(2, disksNumber) - 1;
+	const seconds = turns / turnsPerSecond;
 
-let answer = {
-  turns: turnCount,
-  seconds: minSeconds
-};
-
-return answer;
+	return {
+	  turns,
+	  seconds
+	};
 }
